@@ -4,6 +4,6 @@ Curso: Programación Backend
 Horario: Lunes a Viernes 10hs a 12hs
 
 ## Clases
-- [] Principios de programación Backend
+- [  ] Principios de programación Backend
 
 
