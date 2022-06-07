@@ -1,5 +1,5 @@
 class Contador{
-    static cuentaClase = 0
+    static cuentaGlobal = 0
     constructor(nombre){
         this.nombre = nombre
         this.cuenta = 0
@@ -14,28 +14,29 @@ class Contador{
     }
     
     obtenerCuentaGlobal() {
-        return Contador.cuentaClase
+        return Contador.cuentaGlobal
     }
     
     contar() {
-        Contador.cuentaClase++
+        Contador.cuentaGlobal++
         this.cuenta++
     }
 }
 
-let alguien = new Contador("Emiliano")
+console.log(`Cuenta global: ${Contador.cuentaGlobal}`)
+
+let emi = new Contador("Emiliano")
 let yess = new Contador("Yessica")
 
 yess.contar()
 yess.contar()
 yess.contar()
 
-alguien.contar()
-alguien.contar()
+emi.contar()
+emi.contar()
 
-console.log(alguien.obtenerResponsable())
-console.log(alguien.obtenerCuentaIndividual())
-console.log(yess.obtenerResponsable())
-console.log(yess.obtenerCuentaIndividual())
-
-console.log(alguien.obtenerCuentaGlobal())
+console.log(`Responsable 2: ${emi.obtenerResponsable()}`)
+console.log(`Cuenta individual 2: ${emi.obtenerCuentaIndividual()}`)
+console.log(`Responsable 1: ${yess.obtenerResponsable()}`)
+console.log(`Cuenta Individual 1: ${yess.obtenerCuentaIndividual()}`)
+console.log(`Cuenta global: ${Contador.cuentaGlobal}`)
