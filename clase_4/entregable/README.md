@@ -1,19 +1,19 @@
 # Consigna
 __Implementar programa que contenga una clase llamada Contenedor que reciba el nombre del archivo con el que va a trabajar e implemente los siguientes métodos:__
 
-[ x ]__save(Object):__ 
+- [x] __save(Object):__ 
 Number - Recibe un objeto, lo guarda en el archivo, devuelve el id asignado.
 
-[ x ]__getById(Number):__
+- [x] __getById(Number):__
 Object - Recibe un id y devuelve el objeto con ese id, o null si no está.
 
-[ x ]__getAll(): Object[]__ 
+- [x] __getAll(): Object[]__ 
 Devuelve un array con los objetos presentes en el archivo.
 
-[ x ]__deleteById(Number): void__
+- [x] __deleteById(Number): void__
 Elimina del archivo el objeto con el id buscado.
 
-[ x ]__deleteAll(): void__
+- [x] __deleteAll(): void__
 Elimina todos los objetos presentes en el archivo.
 
 ## Aspectos a incluir en el entregable: 
