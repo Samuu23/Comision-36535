@@ -1,0 +1,22 @@
+[
+	{
+		"title": "IT",
+		"author": "Stephen King",
+		"id": 1
+	},
+	{
+		"title": "Maze Runner",
+		"author": "James Dashner",
+		"id": 2
+	},
+	{
+		"title": "Shadowhunters",
+		"author": "Cassandra Clare",
+		"id": 3
+	},
+	{
+		"title": "Harry Potter",
+		"author": "J. K. Rowling",
+		"id": 4
+	}
+]
