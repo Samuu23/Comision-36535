@@ -1,22 +1,12 @@
-// Deprecado
-// const moment = require('moment')
-// 
-// let fechaActual = moment()
-// let fechaNacimiento = moment('19/01/1997', 'D/M/Y').format('D/M/Y')
-// let añosNacimiento = fechaActual.diff(fechaNacimiento)
-// let diasNacimiento = moment('19/01/1997', 'D/M/Y').startOf('day').fromNow()
-// console.log(`Hoy es ${fechaActual}`)
-// console.log(`Naci en ${fechaNacimiento}`)
-// console.log(`Desde mi nacimiento pasaron ${añosNacimiento} años`)
-// console.log(`Desde mi nacimiento pasaron ${diasNacimiento} dias`)
+const moment = require("moment");
+const fs = require('fs')
+const fechaNac = moment("1997-01-19");
+const diaDeHoy = moment();
+const diffyears = diaDeHoy.diff(fechaNac, "years");
+const diffdays = diaDeHoy.diff(fechaNac, "days")
 
-const today = new Date();
-const yyyy = today.getFullYear();
-let mm = today.getMonth() + 1; // Months start at 0!
-let dd = today.getDate();
+console.log(`Estamos en la fecha ${diaDeHoy.format('DD/MM/YYYY')}`)
+console.log(`Naci en la fecha ${fechaNac.format('DD/MM/YYYY')}`)
+console.log(`Han pasado ${diffyears} años desde mi nacimiento`); 
+console.log(`Han pasado ${diffdays} dias desde mi nacimiento`)
 
-if (dd < 10) dd = '0' + dd;
-if (mm < 10) mm = '0' + mm;
-
-const dateFormat = dd + '/' + mm + '/' + yyyy;
-console.log(dateFormat)

@@ -8,27 +8,38 @@ const productos = [
 ]
 console.log(productos)
 
-let nombres = '';
+let nombres = productos.map(({ nombre }) => nombre).join(',');
 let precioTotal = 0;
 let precioPromedio = 0;
 let menorPrecio= productos[0].precio;
 let mayorPrecio = productos[0].precio;
 
 for(let i = 0; i < productos.length; i++){
-  nombres += `${productos[i].nombre}, `
   precioTotal += productos[i].precio
   precioPromedio += productos[i].precio
 
-  if(menorPrecio < productos[i].precio){
+  if(menorPrecio > productos[i].precio){
     menorPrecio = productos[i].precio 
   }
 
-  if(mayorPrecio > productos[i].precio){
+  if(mayorPrecio < productos[i].precio){
     mayorPrecio = productos[i].precio
   }
 }
 
-console.log(nombres)
-console.log(precioTotal)
-console.log(precioPromedio / productos.length)
-console.log(menorPrecio)
+precioPromedio = precioPromedio / productos.length
+
+let resultado = {
+  nombres,
+  precioTotal: parseFloat(precioTotal.toFixed(2)),
+  precioPromedio: parseFloat(precioPromedio.toFixed(2)),
+  menorPrecio,
+  mayorPrecio
+}
+
+console.log(resultado)
+// console.log(nombres)
+// console.log(precioTotal)
+// console.log(precioPromedio / productos.length)
+// console.log(menorPrecio)
+// console.log(mayorPrecio)
