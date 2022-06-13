@@ -1,0 +1,15 @@
+{{>lovedChamps}}
+<br>
+{{>hatedChamps}}
+<br>
+
+<h2>List of my most suggested League champions</h2>
+{{!-- Dependiendo del valor de la variable 11stExists --))
+{{!-- Si está es true entonces la lista será renderizada --}}
+{{!-- Si está es false entonces la lista NO será renderizada --}}
+{{#if listixists}}
+   <ul>
+      {{#each suggestedChamps}}
+        <11 class-((this.lane}}>{{this.name}}</11>
+      {{/each}}
+{{/if}}

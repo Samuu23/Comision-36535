@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Handlebars Challenge </title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous"></script>
+  <h1> Handlebars Challenge </h1> 	
+  <span></span>
+  <script>
+    const templateString = `
+      <h2> Personal Information </h2>
+      <ul>
+        <li>{{name}}</li>
+        <li>{{lastName}}</li>
+        <li>{{age}}</li>
+        <li>{{email}}</li>
+        <li>{{phone}}</li>
+      </ul>`
+    const template = Handlebars.compile(templateString)
+    const context = {
+      name: 'coder',
+      lastName: 'house',
+      age: 25,
+      email: 'coder@house',
+      phone: '12345678'
+    }
+    const html = template(context)
+    document.querySelector('span').innerHTML = html
+  </script>
+
+</body>
+</html>
