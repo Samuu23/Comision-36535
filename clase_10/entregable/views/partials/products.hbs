@@ -1,0 +1,25 @@
+<h2 style="color:crimson;"> Product List </h2>
+
+<div class="table-responsive">
+    <table class="table table-dark">
+        <tr style="color: yellow;">
+            <th>Title</th>
+            <th>Price</th>
+            <th>Picture</th>
+        </tr>
+	{{#each products}}
+        <tr class="align-middle">
+            <td>
+                {{ this.title }}
+            </td>
+            <td>
+                {{ this.price }}
+            </td>
+            <td>
+                <img src="{{ this.thumbnail }}" height="50px" />
+            </td>
+        </tr>
+	{{/each}}
+    </table>
+</div>
+

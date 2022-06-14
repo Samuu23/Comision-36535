@@ -1,0 +1,12 @@
+extends layout
+
+block medidor
+  // - Te permite definir variables
+  - let style = "width:25%;height:20px;" 
+  
+  // el simbolo != permite insertar html parseado en lugar del string literal contenido en la variable
+  h1(style="color:blue;")!=title
+  span=min + " "
+  meter(value=level min=min max=max style=style)
+  span=" " + max
+
