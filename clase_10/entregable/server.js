@@ -5,26 +5,44 @@ const { engine } = require('express-handlebars')
 
 const products = []
 
-// Settings
-app.engine('hbs', engine({
-  extname: 'hbs',
-  defaultLayout: 'index.hbs',
-  layoutsDir: `${__dirname}/views/layouts`,
-  partialsDir: `${__dirname}/views/partials`
-}))
+// Settings Handlebars
+// app.engine('hbs', engine({
+//   extname: 'hbs',
+//   defaultLayout: 'index.hbs',
+//   layoutsDir: `${__dirname}/views/handebars/layouts`,
+//   partialsDir: `${__dirname}/views/handlebars/partials`
+// }))
+// 
+// app.set('view engine', 'hbs')
+// app.set('views', './views/handlebars')
 
+// Settings Pug
+// app.set('view engine', 'pug')
+// app.set('views', './views/pug_js')
+
+// Settings EJS
+app.set('view engine', 'ejs')
+app.set('views', './views/ejs_view')
+
+// Settings server
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
-app.set('view engine', 'hbs')
-app.set('views', './views')
 
 // Routes
 app.use('/api/products', router)
 
+// Route Handlebars
+// app.get('/', (req, res) => {
+//   res.render('main.hbs', {
+//     products
+//   })
+// })
+
+// Route Pug
 app.get('/', (req, res) => {
-  res.render('main.hbs', {
+  res.render('index', {
     products
   })
 })

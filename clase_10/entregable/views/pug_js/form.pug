@@ -1,0 +1,16 @@
+h2="Entry Data"
+
+form(action='/products' method='post')
+      .form-group
+        label(for='title')
+          b Title
+        input#title.form-control(type='text' name='title')
+      .form-group
+        label(for='price')
+          b  Price 
+        input#price.form-control(type='text' name='price')
+      .form-group
+        label(for='thumbnail')
+          b  Thumbnail 
+        input#thumbnail.form-control(type='text' name='thumbnail')
+      button.btn.btn-success.mt-3.mb-5 Send

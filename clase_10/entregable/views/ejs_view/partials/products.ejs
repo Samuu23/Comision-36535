@@ -1,0 +1,29 @@
+<h2 style="color:crimson;"> History</h2>
+
+<% const areProducts = products.length > 0; %>
+<% if(areProducts){ %>
+<div class="table-responsive">
+    <table class="table table-dark">
+        <tr style="color: yellow;">
+            <th>Title</th>
+            <th>Price</th>
+            <th>Picture</th>
+        </tr>
+        <% for (const product of products) {%>
+        <tr>
+            <td>
+                <%=product.title%>
+            </td>
+            <td>
+                <%=product.price%>
+            </td>
+            <td>
+                <img src=<%= product.thumbnail %> height="50px"
+            </td>
+        </tr>
+        <%};%>
+    </table>
+</div>
+<% } else{ %>
+<h3 class="alert alert-danger"> No data</h1>
+    <% } %>

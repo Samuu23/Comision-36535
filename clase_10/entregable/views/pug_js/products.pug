@@ -1,0 +1,17 @@
+h2(style='color:crimson;') Product List
+
+.table-respive
+		table.table.table-dark
+			tbody
+				tr(style='color:yellow;')
+					th="Name"
+					th="Price"
+					th="Picture" 
+			each product in products
+				tr.align-middle
+					td=product.title
+					td=product.price
+					td
+						img(src=product.thumbnail height="50px")
+			else
+				h3.alert.alert-danger="No Data"

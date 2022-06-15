@@ -22,3 +22,7 @@ Sugerencias:
 
 Opcional:  
 - Utilizar bootstrap para maquetar la vista creada por dicho motor de plantillas y el formulario de ingreso de productos.
+
+# Respuesta escrita
+
+Mi motor de plantillas favorito es EJS y Handlebars. Odié PUG
