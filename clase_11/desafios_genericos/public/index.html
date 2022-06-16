@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sockets </title>
+    <link rel="sylesheet" href="/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </head>
+
+  <body>
+    <h1> Sockets </h1>
+
+    <form onsubmit="sendMessage(this)">
+      Usuario: <input type="text" id="user" name="user" placeholder="emiperez997" /> 
+      <br>
+      Mensaje: <br>
+      <textarea name="message" id="message" placeholder="Your message..." /></textarea>
+      <br>
+      <input type="submit" value="Enviar!" />
+
+    </form>
+    
+    <div id="messages"></div>
+  </body>
+
+</html>
