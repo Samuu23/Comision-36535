@@ -12,17 +12,21 @@
   <body>
     <h1> Sockets </h1>
 
+		<!-- Consigna 2 
     <form onsubmit="sendMessage(this)">
-      Usuario: <input type="text" id="user" name="user" placeholder="emiperez997" /> 
-      <br>
-      Mensaje: <br>
-      <textarea name="message" id="message" placeholder="Your message..." /></textarea>
-      <br>
-      <input type="submit" value="Enviar!" />
-
+			<input type="text" id="input_message" oninput="inputMessage()">
     </form>
     
-    <div id="messages"></div>
+		<p id="message"></p> -->
+
+		<!-- Consigna 3 -->
+		<form onsubmit="return sendMessage(this)">
+			Mensaje: <br>
+			<input type="text" id="input_message">
+			<input type="submit" value="Submit">
+		</form>
+
+		<div id="messages"></div>
   </body>
 
 </html>
