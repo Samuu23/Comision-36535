@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Sockets App</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<h1>My Chat App</h1>
+
+	<div id="messages"></div>
+
+	<form onsubmit="return addMessage(this)">
+		<input type="text" id="username" placeholder="Your name...">
+		<input type="text" id="text" placeholder="Tell us something">
+		<input type="submit" value="Send!">
+	</form>
+	
+</body>
+</html>
