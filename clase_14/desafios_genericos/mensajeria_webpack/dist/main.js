@@ -1,0 +1,1 @@
+setTimeout((()=>{console.log("Hola, soy mensaje 1")}),1e3),setTimeout((()=>{console.log("Hola, soy mensaje 2")}),2e3),setTimeout((()=>{console.log("Hola, soy mensaje 3")}),3e3);
