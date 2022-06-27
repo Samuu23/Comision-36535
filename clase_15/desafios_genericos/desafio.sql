@@ -1,7 +1,11 @@
+SHOW DATABASES;
+
 CREATE DATABASE mibase;
 
+USE mibase;
+
 CREATE TABLE usuarios(
-	id int not null,
+	id int not null auto_increment,
 	nombre varchar(255) not null,
 	apellido varchar(255) not null,
 	edad int,
@@ -9,9 +13,11 @@ CREATE TABLE usuarios(
 	PRIMARY KEY(id)
 );
 
-INSERT INTO usuarios(nombre, apellido, edad, email) VALUES (Juana Suarez, 25, js@gmail.com);
-INSERT INTO usuarios(nombre, apellido, edad, email) VALUES (Juan Perez, 23, jp@gmail.com);
-INSERT INTO usuarios(nombre, apellido, edad, email) VALUES (Pedro Mei, 21, pm@gmail.com);
+DESCRIBE usuarios;
+
+INSERT INTO usuarios(nombre, apellido, edad, email) VALUES ("Juan", "Perez", 23, "jp@gmail.com");
+INSERT INTO usuarios(nombre, apellido, edad, email) VALUES ("Pedro", "Mei", 21, "pm@gmail.com");
+INSERT INTO usuarios(nombre, apellido, edad, email) VALUES ("Juana", "Suarez", 25, "js@gmail.com");
 
 SELECT * FROM usuarios;
 
