@@ -1,5 +1,6 @@
 {
   "name": "desafios_genericos",
+	"type": "module",
   "version": "1.0.0",
   "description": "1. Node + MariaDB/MySQL",
   "main": "index.js",
