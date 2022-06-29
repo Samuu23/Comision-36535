@@ -1,0 +1,21 @@
+1. $ sudo mongod --dbpath /home/emi/Programacion/Comision-36535/clase_17/desafios_genericos/primer_db 
+3. $ mongosh
+4. > show dbs
+5. > use sistema
+6. > db.usuarios.insert({ nombre: 'Emiliano', edad: 25 }) 
+7. > db.usuarios.find()
+8. > show collections
+9. > db.usuarios.insertMany([
+			{ nombre: 'Yessi', edad: 26 },
+			{ nombre: 'Mati', edad: 28 },
+			{ nombre: 'Flor', edad: 28 }
+		])
+10. > db.usuarios.find()
+11. > db.productos.insertMany([
+			{ nombre: 'Mouse', precio: 290, stock: 25 },
+			{ nombre: 'Keyboard', precio: 300, stock: 30 },
+			{ nombre: 'Headphones', precio: 190, stock: 100 },
+			{ nombre: 'Notebook', precio: 2500, stock: 15 }
+		])
+12. show collections
+13. db.productos.find()
