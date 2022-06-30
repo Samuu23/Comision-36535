@@ -1,47 +1,44 @@
 const { Router } = require('express')
 const data = []
 const router = Router()
+const container = require('../Container/ClientSQL')
+const { mysql } = require('../Container/options')
+
+const db = new container(mysql, 'products')
 
 
 // GET
-router.get('/', (req, res) => {
-  res.json({ products: data })
+router.get('/', async (req, res) => {
+	let products = await db.list()
+  res.send(products)
 })
 
-router.get('/:id', (req, res) => {
-  let { id } = req.params
-  let product = data.find(prod => id == prod.id)
+router.get('/:id', async (req, res) => {
+	let product = await db.getById(req.params.id) != [] ? 'No data' : db.getById(req.params.id)  
   res.json({ result: product })
 })
 
 // POST
-router.post('/', (req, res) => {
-  let product = req.body
-  if(data.length == 0){
-    product.id = 1
-  } else {
-    product.id = data[data.length - 1].id + 1
-  }
-  data.push(product)
-  res.json({ product })
+router.post('/', async (req, res) => {
+	let postProduct = req.body
+	let result = await db.insert(postProduct)
+	res.json({ result })
 })
 
-router.put('/:id', (req,res) => {
+router.put('/:id', async (req,res) => {
   let { id } = req.params
-  let newProduct = req.body
-  newProduct.id = id
-  let prodId = data.findIndex(prod => prod.id == id)
-  data[prodId] = newProduct
+	let newProduct = req.body
+	let result = await db.updateById(newProduct, id)
  
-  res.json({status: "Updated", product: newProduct})
+  res.json({status: "Updated", product: result})
 })
 
 // DELETE
-router.delete('/:id', (req, res) => {
-  let { id } = req.params
-  let prodId = data.findIndex(prod => prod.id == id)
-  data.splice(prodId, 1)
-  res.json({ status: 'deleted' })
+router.delete('/:id', async (req, res) => {
+	let { id } = req.params
+  let prodId = await db.deleteById(id)
+
+	res.json({ status: 'deleted', response: prodId })
 
 })
 

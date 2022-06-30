@@ -19,6 +19,7 @@ addProducts.addEventListener('submit', e => {
 })
 
 async function handlerEvent(products) {
+	console.log(products)
 	const template = await fetch('/templates/products.hbs')
 	const textTemplate = await template.text()
 	const functionTemplate = Handlebars.compile(textTemplate)
@@ -38,8 +39,7 @@ addMessages.addEventListener('submit', e => {
 	let today = new Date()
 
 	const message = {
-		author: document.querySelector('#email').value,
-		date: today.toLocaleString(),
+		email: document.querySelector('#email').value,
 		message: document.querySelector('#message').value
 	}
 
