@@ -1,0 +1,29 @@
+> use admin
+
+> db.createUser({
+	user: 'encargado',
+	pwd: 'qwerty123',
+	roles: [
+		{ role: "readWrite", db: "empresa" }
+	]
+	})
+
+// resultado:
+
+Successfully added user: {
+    "user" : "encargado",
+    "roles" : [
+        {
+            "role" : "readWrite",
+            "db" : "empresas"
+        }
+    ]
+}
+
+Inicio de sesion
+λ mongo -u "encargado" -p "qwerty123"
+
+> db.clientes.find({},{nombre:1,_id:0})
+
+Consigna 3
+λ mongo -u "encargado" -p "pepe123"
