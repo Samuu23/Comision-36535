@@ -1,0 +1,67 @@
+Inicializacion 
+> use ecommerce
+
+> db.createCollection('messages')
+> db.createCollection('products')
+
+1 y 2
+Datos
+> db.products.insertMany([
+	{ "title": "Micrphone", "price": 100, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-3/16/mic-128.png" },
+	{ "title": "Mouse", "price": 1700, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-3/16/mouse-128.png" },
+	{ "title": "Headphones", "price": 580, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-3/16/headphones-128.png" },
+	{ "title": "Music Player", "price": 4990, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-3/16/music-player-128.png" },
+	{ "title": "USB Drive", "price": 1280, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-5/16/usb-drive-128.png" },
+	{ "title": "Calculator", "price": 580, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap/16/calculator-512.png" },
+	{ "title": "Steam Card 10USD", "price": 15, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-4/16/steam-128.png" },
+	{ "title": "Joystick PC", "price": 2300, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-2/16/controller-128.png" },
+	{ "title": "Speaker PC", "price": 4320, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-4/16/speaker-128.png" },
+	{ "title": "Intel Core I5", "price": 5000, "thumbnail": "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-2/16/cpu-128.png" }
+])
+> db.messages.insertMany([
+	{ "author": "emiperez997", date: new Date().toLocaleString(), "message": "Hola" },
+	{ "author": "yesiseep", date: new Date().toLocaleString(), "message": "Hola" },
+	{ "author": "emiperez997", date: new Date().toLocaleString(), "message": "¿Como estas?" },
+	{ "author": "yesiseep", date: new Date().toLocaleString(), "message": "Bien, ¿Y tu?" },
+	{ "author": "emiperez997", date: new Date().toLocaleString(), "message": "Bien" },
+	{ "author": "yesiseep", date: new Date().toLocaleString(), "message": "¿Que haces?" },
+	{ "author": "emiperez997", date: new Date().toLocaleString(), "message": "Pues nada" },
+	{ "author": "yesiseep", date: new Date().toLocaleString(), "message": "Ah genial" },
+	{ "author": "yesiseep", date: new Date().toLocaleString(), "message": "Yo estoy trabajando" },
+	{ "author": "emiperez997", date: new Date().toLocaleString(), "message": "Miss u" }
+])
+
+3.
+> db.products.find()
+> db.messages.find()
+
+4. 
+> db.products.estimatedDocumentCount()
+> db.messages.estimatedDocumentCount()
+
+5.
+> db.products.insertOne({ title: "Smartwatch", price: 3350, thumbnail: "https://cdn1.iconfinder.com/data/icons/bootstrap-vol-4/16/smartwatch-256.png" })
+> db.products.find(price: { $lt: 1000 })
+> db.products.find(price: { $gt: 1000, $lte: 3000 })
+> db.products.find(price: { $gt: 3000 })
+> db.products.find({}, { title: 1, _id: 0 }).sort({price: 1}).skip(2).limit(1)
+> db.products.updateMany({}, { $set: { stock: 100 } })
+> db.products.updateMany({ price: { $gt: 4000 } }, { $set: { stock: 0 } })
+> db.products.deleteMany({ price: { $lte: 1000 } })
+
+6.
+Para que esto funcione debo inicializar:
+	$ sudo mongod --auth
+
+
+> use ecommerce
+> db.createUser({
+	user: 'pepe',
+	pwd: 'asd456',
+	roles: [
+		{ role: 'read', db: ecommerce }
+	]
+	})
+	
+Luego iniciar asi
+	$ mongosh -u pepe -p asd456
