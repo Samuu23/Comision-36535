@@ -24,3 +24,13 @@ Horario: Lunes a Viernes 10hs a 12hs
 18. CRUD en MongoDB
 19. Mongoose
 20. DbaaS & Firebase
+21. Trabajo con datos: Mocks
+22. Trabajo con datos: Normalizacion
+23. Cookies, Sesiones y Storage: Parte 1
+24. Cookies, Sesiones y Storage: Parte 2
+25. Autorización y Autenticación
+26. Estrategias de Autenticación con redes sociales
+27. Proceso principal del servidor
+28. Global Child & Process
+29. Cluster & Escalabilidad
+30. PROXY & NGNIX

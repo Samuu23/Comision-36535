@@ -1,0 +1,17 @@
+{
+  "name": "ejemplo_api",
+  "version": "1.0.0",
+  "description": "- El proyecto tiene cinco rutas: \t- POST /api/usuarios/popular?cant=n : si no específico cant me genera 50 objetos mock \t- GET /api/usuarios/:id? : con id me trae un mock; sin id devuelve todos los mocks \t- POST /api/usuarios : incorpora un nuevo mock \t- PUT /api/usuarios/:id : actualiza un mock total o parcialmente por campo \t- DELETE /api/usuarios/:id : borra un mock específico - Los usuarios tienen: nombre, email, website, e imagen. - Cada una puede generar, listar, incorporar, actualizar y borrar mocks. - Los datos son persistentes en memoria.",
+  "main": "index.js",
+	"type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "faker": "^5.5.3"
+  }
+}

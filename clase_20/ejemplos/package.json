@@ -1,0 +1,16 @@
+{
+  "name": "ejemplos",
+  "version": "1.0.0",
+  "description": "- Creamos un proyecto Node.js con npm init -y - Instalamos el paquete npm para trabajar con Firebase en la carpeta de nuestro proyecto: npm i firebase-admin - Incluimos en el proyecto el archivo JSON descargado desde el botón _Generar nueva clave privada_ de la configuración de nuestro servidor en modo admin. - Generamos el archivo server.js y escribimos el código de conexión hacia la base de datos Firebase como se detalla a continuación:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.8.4",
+    "firebase-admin": "^11.0.0"
+  }
+}
