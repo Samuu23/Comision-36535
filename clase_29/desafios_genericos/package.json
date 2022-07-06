@@ -1,0 +1,16 @@
+{
+  "name": "desafios_genericos",
+  "version": "1.0.0",
+  "description": "1. Servidor Node con Fork  - Realizar un servidor Node.js basado en express al que se le pase como parámetro el número de puerto de escucha. De no recibir este dato, el servidor iniciará en el puerto 8080. \t- Al ponerse en línea el servidor representará por consola el puerto de conexión y su número de proceso (pid). \t- En el endpoint raíz '/' deberá devolver un mensaje con el siguiente formato:",
+  "main": "index.js",
+	"type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
