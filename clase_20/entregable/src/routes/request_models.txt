@@ -1,0 +1,9 @@
+// Products
+{
+    "name": "Keyboard",
+    "description": "Mechanic Keyborad Ryzen Black",
+    "code": "KEY002",
+    "pic": "image.com/2",
+    "price": 5100,
+    "stock": 30
+}

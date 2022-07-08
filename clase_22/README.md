@@ -23,23 +23,6 @@ Normalizr npm site: https://www.npmjs.com/package/normalizr
 
 Normalizr github site: https://github.com/paularmstrong/normalizr
 
-## Ejemplo de uso
-
-Las publicaciones en un blog pueden tener este formato de datos:
-
-Este tipo de estructura parece totalmente correcta, pero cuando almacenemos más publicaciones de blog, se duplicarán los datos de los autores. A medida que nuestro blog crece, podemos agregar categorías y relaciones entre comentarios y usuarios.
-
-No es necesario almacenar todo en un objeto.
-
-## Solución: Normalizr
-- Normalizr funciona definiendo esquemas y luego declarando cómo estos esquemas se representan a través de entidades.
-- El único requisito es que cada entidad (publicación, comentario, autor) tenga la propiedad ‘id’. Se puede cambiar con la opción idAttribute
-
-## Resultado
-- Este objeto es el resultado del proceso de normalización.
-- Los datos están agrupados por ‘entidades’, y ‘result’ es el punto de entrada. 
-- Logramos desanidar y aplanar la información. Esto nos va a ayudar a quitar redundancias.
-
 ## Pros y Contras
 
 ### Pros

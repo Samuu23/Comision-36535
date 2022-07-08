@@ -17,13 +17,13 @@ Horario: Lunes a Viernes 10hs a 12hs
 11. Websockets
 12. Aplicación chat con Websocket
 13. Node.js como herramienta de desarrollo
-14. Webpack: Module Bundler
+14. Webpack: Module Bundler (Primera Entrega)
 15. SQL
 16. SQL y Node.js
 17. MongoDB
 18. CRUD en MongoDB
 19. Mongoose
-20. DbaaS & Firebase
+20. DbaaS & Firebase (Segunda Entrega)
 21. Trabajo con datos: Mocks
 22. Trabajo con datos: Normalizacion
 23. Cookies, Sesiones y Storage: Parte 1
