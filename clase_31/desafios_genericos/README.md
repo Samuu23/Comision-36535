@@ -19,3 +19,13 @@
 	- En caso de fallar el inicio del servidor, loguear un error
 	- En caso de recibir una petición a un recurso inválido, loguear una warning.
 - La decisión de qué logger exportar se tomará en base al valor de una variable de entorno NODE_ENV, cuyo valor puede ser: ‘PROD’ para producción, o cualquier otra cosa (incluyendo nada) para desarrollo.
+
+3. Loguear con Winston
+
+- Realizar el ejercicio anterior pero esta vez utilizando winston logger.
+- Crear los loggers respetando los niveles de log y las capas de transporte necesarias para cumplir con el enunciado.
+
+4. Loguear con Pino
+
+- Realizar el ejercicio anterior pero esta vez utilizando pino logger. En el caso del logger para el entorno de producción, loguear a un único archivo ‘debug.log’, con nivel ‘debug’.
+- (Pino no soporta actualmente la salida en simultáneo por más de un transporte)

@@ -99,3 +99,5 @@ Un log o historial de log refiere al registro secuencial de cada uno de los even
 - Cada logger de Winston puede tener múltiples transportes, configurados en diferentes niveles.
 
 > Usando Winston
+
+> Usando Pino
