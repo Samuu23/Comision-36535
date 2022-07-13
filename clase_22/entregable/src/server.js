@@ -3,25 +3,32 @@ const { Server: HttpServer } = require('http')
 const { Server: IOServer } = require('socket.io')
 const container = require('./Container/ClientSQL')
 const { mysql, sqlite } = require('./Container/options')
+const router = require('./routes/routes')
+const cors = require('cors')
 
 const app = express()
-const httpServer = new HttpServer(app)
-const io = new IOServer(httpServer)
 
 // Settings server
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(`${__dirname}/public`))
 
 // Get
-// app.get('/', (req, res) => {
-// 	res.sendFile(`${__dirname}/public/index.html`)
-// })
+app.use('/', router)
+app.get('/', (req, res) => {
+	res.sendFile(`${__dirname}/public/index.html`)
+})
+app.get('/products', (req, res) => {
+	res.json({ holi: 'Hola' })
+})
 
 // Knex 
 const mysqlKnex = new container(mysql, 'products')
 const sqliteKnex = new container(sqlite, 'messages')
 
+const httpServer = new HttpServer(app)
+const io = new IOServer(httpServer)
 
 // Webscokets
 io.on('connection', async (socket) => {

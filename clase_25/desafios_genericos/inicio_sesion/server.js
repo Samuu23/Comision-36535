@@ -2,19 +2,32 @@ const express = require('express')
 const { engine: exphbs } = require('express-handlebars')
 const session = require('express-session')
 
-/******************  DATABASE  ******************/
-
+// Database
 const usuarios = []
 
-/******************  SERVER  ******************/
-
+// Server
 const app = express()
 
-/******************  MIDDLEWARES  ******************/
+// Middlewares
+function requireAuthentication(req, res, next) {
+  if (req.isAuthenticated()) {
+    next()
+  } else {
+    res.redirect('/login')
+  }
+}
 
+function includeUserData(req, res, next) {
+  if (req.session.nombre) {
+    req.user = usuarios.find(usuario => usuario.nombre == req.session.nombre)
+  }
+  next()
+}
+
+// Settings
 app.use(
   session({
-    secret: 'shhhhhhhhhhhhhhhhhhhhh',
+    secret: 's3cr3t',
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -86,22 +99,8 @@ app.post('/login', (req, res) => {
   res.redirect('/datos')
 })
 
-function requireAuthentication(req, res, next) {
-  if (req.isAuthenticated()) {
-    next()
-  } else {
-    res.redirect('/login')
-  }
-}
 
-function includeUserData(req, res, next) {
-  if (req.session.nombre) {
-    req.user = usuarios.find(usuario => usuario.nombre == req.session.nombre)
-  }
-  next()
-}
-
-// DATOS
+// Datos
 app.get('/datos', requireAuthentication, includeUserData, (req, res) => {
   req.session.contador++
   res.render('datos', {
@@ -110,21 +109,21 @@ app.get('/datos', requireAuthentication, includeUserData, (req, res) => {
   })
 })
 
-// LOGOUT
+// Logout
 app.get('/logout', (req, res) => {
   req.logout(err => {
     res.redirect('/login')
   })
 })
 
-// INICIO
+// Inicio
 app.get('/', requireAuthentication, (req, res) => {
   res.redirect('/datos')
 })
 
 /******************  LISTEN  ******************/
 
-const PORT = 8080
+const PORT = 3000
 const server = app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`)
 })

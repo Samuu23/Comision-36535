@@ -1,0 +1,12 @@
+<div class="container text-center">
+	<div class="jumbotron" style="background-color: green; color: white">
+		<h1> User logged </h1>
+		<h2><i> Bienvenido {{ datos.nombre }}</i></h2>
+		<br>
+		<h3> Direccion: {{ datos.direccion }}</h3>
+		<h4> Visitas: {{ contador }}</h4>
+
+		<br>
+		<button class="btn btn-danger" onclick="location.href='/logout'">Logout</button>
+	</div>
+</div>
