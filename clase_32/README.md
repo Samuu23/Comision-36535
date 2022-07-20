@@ -37,3 +37,16 @@
 - Una vez descargado, descomprimimos el zip y en la carpeta “bin” encontramos el archivo de instalación “.exe” llamado curl.exe. (Posiblemente tengamos que ejecutarlo como administrador)
 - Una vez instalado, ya lo podemos utilizar como comando en la consola.
 
+> Node Profiling
+
+> Node inspect
+
+## Autocanon y Ox
+
+- Autocannon es una dependencia de Node (similar a Artillery) que nos ayuda a realizar los test de carga.
+- Es una herramienta de evaluación comparativa HTTP / 1.1.
+
+- 0x es una dependencia que perfila y genera un gráfico de flama (flame graph) interactivo para un proceso Node en un solo comando.
+- En este caso, vamos a hacer los test de carga por código, en lugar de por consola como hicimos con Artillery.
+
+> Realizando test de carga
