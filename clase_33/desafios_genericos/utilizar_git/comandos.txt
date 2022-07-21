@@ -1,0 +1,41 @@
+-------------------
+Carpeta 1
+-------------------
+$ mkdir proyectoGit-persona_1
+
+$ git init
+
+$ npm init --y && npm i express
+
+$ touch server.js
+
+$ node server.js
+
+$ echo node_modules > .gitignore
+
+$ git add .
+
+$ git commit -m "v0.0.1"
+
+$ git remote add origin https://github.com/emiperez997/proyectoGit.git
+
+$ git push
+
+-------------------
+Carpeta 2
+-------------------
+$ mkdir proyectoGit-persona_2
+
+$ git clone https://github.com/emiperez997/proyectoGit.git
+
+$ npm i 
+
+$ git add .
+$ git commit -m "v0.0.2"
+$ git push origin master
+
+-------------------
+Carpeta 1
+-------------------
+
+$ git pull
