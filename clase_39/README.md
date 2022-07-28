@@ -285,3 +285,5 @@ La plantilla para un IIFE consiste en una declaración de función anónima, den
 - Al intentar decidir si necesitamos una implementación tipo Singleton o no, debemos considerar algo: 
 - ¿Cuántas instancias de nuestras clases necesitaremos realmente? Si la respuesta es 2 o más, este no es el patrón a elegir.
 - Sin embargo, por ejemplo, puede haber ocasiones en las que tengamos que lidiar con conexiones de bases de datos que deseemos considerar. En este caso, una vez que nos hayamos conectado a la base de datos, podría ser una buena idea mantener viva esa conexión y accesible a través del código. Y esto lo podemos resolver, entre otras opciones, con el patrón Singleton.
+
+
