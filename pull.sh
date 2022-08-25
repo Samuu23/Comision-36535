@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git pull https://emiperez997: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@github.com/No-Country/c6-43
+git pull https://emiperez997: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@github.com/emiperez997/Comision-36535
 
-echo Pusheado!
+echo Pulleado!
 
