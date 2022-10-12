@@ -12,6 +12,5 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/api/products', productsRouter)
 app.use('/api/cart', cartRouter)
 
-
 // Listen
 app.listen(PORT, () => console.log(`Server on Port ${PORT}`))

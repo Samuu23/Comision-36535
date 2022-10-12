@@ -58,7 +58,7 @@ module.exports = class File {
 	update(element){
 		try {
 			let one = this.elements.find(el => el.id == element.id)
-			console.log(one)
+			// console.log(one)
 			let newElement = {...one, ...element}
 			
 			let index = this.elements.findIndex((el, ind) => {

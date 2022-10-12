@@ -1,6 +1,6 @@
 class Product {
 	constructor(name, description, code, pic, price, stock){
-		let time = 
+
 		this.timestamp = new Date().toLocaleString()
 		this.name = name || ""
 		this.description = description || ""

@@ -1,1 +1,12 @@
-
+[
+	{
+		"timestamp": "12/10/2022, 10:53:50",
+		"name": "Notebook Dell 7240",
+		"description": "This is a notebook",
+		"code": "100A",
+		"pic": "image.com/notebook-dell",
+		"price": 500,
+		"stock": 20,
+		"id": 1
+	}
+]

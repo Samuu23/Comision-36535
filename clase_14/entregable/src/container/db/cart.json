@@ -1,1 +1,34 @@
-
+[
+	{
+		"timestamp": "12/10/2022, 09:43:36",
+		"products": [
+			{
+				"timestamp": "12/10/2022, 10:53:50",
+				"name": "Notebook Dell 7240",
+				"description": "This is a notebook",
+				"code": "100A",
+				"pic": "image.com/notebook-dell",
+				"price": 350,
+				"stock": 20,
+				"id": 1
+			}
+		],
+		"id": 1
+	},
+	{
+		"timestamp": "12/10/2022, 09:46:17",
+		"products": [
+			{
+				"timestamp": "12/10/2022, 10:53:50",
+				"name": "Notebook Dell 7240",
+				"description": "This is a notebook",
+				"code": "100A",
+				"pic": "image.com/notebook-dell",
+				"price": 350,
+				"stock": 20,
+				"id": 1
+			}
+		],
+		"id": 2
+	}
+]

@@ -5,6 +5,7 @@ const File = require('../container/File')
 const cartRouter = Router()
 const controller = new File('cart')
 const controllerProd = new File('products')
+const admin = require('../utils/admin')
 
 cartRouter.post('/', (req, res) => {
 	let cart = new Cart()
@@ -16,15 +17,24 @@ cartRouter.delete('/:id', (req, res) => {
 	res.json(controller.deleteById(id))
 })
 
-cartRouter.get('/:id/products', (req, res) => {
-	let { id } = req.params
-	let cart = controller.getById(id)
-	console.log(cart.products)
-	if(cart.products == undefined){
-		res.json({ response: 'No Cart Found' })
-	} else {
-		res.json({ id: cart.id , products: cart.products })
-	}
+cartRouter.get('/:id/products', admin, (req, res) => {
+  console.log(req.admin)
+  const admin = false
+  if(admin == false) {
+    res.json({ response: 'No tenes autorizacion' })
+  }
+  else {
+
+	  let { id } = req.params
+
+	  let cart = controller.getById(id)
+	  // console.log(cart.products)
+	  if(cart.products == undefined){
+	  	res.json({ response: 'No products' })
+	  } else {
+	  	res.json({ id: cart.id , products: cart.products })
+	  }
+  }
 
 })
 
@@ -41,18 +51,17 @@ cartRouter.post('/:id/products', (req, res) => {
 	let response = controller.update(cart)
 	res.json({ response: 'Products Added to the Cart', cart: response })
 })
+
 cartRouter.delete('/:id/products/:id_prod', (req, res) => {
 	let { id, id_prod } = req.params
-	let cart = controller.getById(id)
+  let cart = controller.getById(id)
 
 	let index = cart.products.findIndex((el, ind) => {
 		if(el.id == id_prod) { return true }
-	})
-
-	
+	})	
 
 	let newProducts = cart.products.filter((prod, ind) => prod.id != id_prod)
-	console.log(index, cart.products)
+	// console.log(index, cart.products)
 	cart.products = newProducts
 	let response = controller.update(cart)
 	res.json({ response: 'Product Deleted from Cart', cart: response })
